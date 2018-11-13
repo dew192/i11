@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="atry.i11.com.i11">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+
+        <meta-data
+            android:name="proto.inventa.cct.com.inventalibrary.utils.Constants.app_id"
+            android:value="79629760-a5dd-11e8-9110-7911862cd4cf" />
+        <meta-data
+            android:name="proto.inventa.cct.com.inventalibrary.utils.Constants.client_app_id"
+            android:value="79629761-a5dd-11e8-9110-7911862cd4cf" />
+
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <receiver
+            android:name=".DiscoveryBroadcastReceiver"
+            android:enabled="true">
+            <intent-filter>
+                <action android:name="inventa.intent.action.DISCOVERY.ENGAGEMENTZONES" />
+                <action android:name="inventa.intent.action.DISCOVERY.GEOZONES" />
+                <action android:name="inventa.intent.action.DISCOVERY.INSTORE" />
+                <action android:name=" inventa.intent.action.notification.ACTION_NOTIFICATION_CLICK_GZONE" />
+                <action android:name="inventa.intent.action.notification.ACTION_NOTIFICATION_CLICK_EZONE" />
+                <action android:name="inventa.intent.action.notification.ACTION_NOTIFICATION_CLICK_INSTORE" />
+            </intent-filter>
+        </receiver>
+    </application>
+
+</manifest>
